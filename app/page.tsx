@@ -1,6 +1,10 @@
 
+import ContentWrapper from "./components/contentWrapper";
+
 export default function Page() {
   return (
-    <div>Home</div>  
+    <ContentWrapper>
+      <div>Home</div>
+    </ContentWrapper>
   );
 }
