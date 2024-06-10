@@ -8,12 +8,12 @@ interface ContentWrapperProps{
 
 const ContentWrapper:React.FC<ContentWrapperProps> = ({children})=>{
   const [menuOpen, setMenuOpen] = useState<boolean>()
-  return(
+  return(<>
     <div className={`bg-green-300 transition-[transform] duration-500 ease-in-out ${menuOpen ? "scale-75":"scale-100"}`}>
       {children}
-      <button onClick={()=>setMenuOpen(!menuOpen)} className="border-2 px-3 py-2">メニュー</button>
     </div>
-  )
+    <button onClick={()=>setMenuOpen(!menuOpen)} className="border-2 px-3 py-2">メニュー</button>
+  </>)
 }
 
 export default ContentWrapper
