@@ -23,7 +23,7 @@ const WarpPortal = ()=>{
 const Menu:React.FC = ()=>{
   const MenuButton:React.FC<LayoutProps> = ({className})=>{
     return(
-      <button className={`fixed top-10 right-10 w-14 h-14 rounded-full bg-white z-50 ${className}`}>
+      <button className={`fixed top-10 right-10 w-14 h-14 rounded-full bg-white ${className}`}>
 
       </button>
     )
@@ -31,8 +31,10 @@ const Menu:React.FC = ()=>{
 
 
   return(<>
-    <MenuButton/>  
-    <WarpPortal/>
+    <div className="fixed z-50">
+      <MenuButton/>  
+      <WarpPortal/>
+    </div>
   </>)
 }
 
