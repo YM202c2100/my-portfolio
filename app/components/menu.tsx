@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useState } from "react"
 
 interface LayoutProps{
   className?:string
@@ -21,10 +22,13 @@ const WarpPortal = ()=>{
 }
 
 const Menu:React.FC = ()=>{
+  const [isMenuOpen, setMenuOpen] = useState<boolean>(false)
+
   const MenuButton:React.FC<LayoutProps> = ({className})=>{
     return(
-      <button className={`fixed top-10 right-10 w-14 h-14 rounded-full bg-white ${className}`}>
-
+      <button 
+        className={`fixed top-10 right-10 w-14 h-14 rounded-full bg-white ${className}`}
+        onClick={()=>{setMenuOpen(!isMenuOpen)}}>
       </button>
     )
   }
@@ -33,7 +37,7 @@ const Menu:React.FC = ()=>{
   return(<>
     <div className="fixed z-50">
       <MenuButton/>  
-      <WarpPortal/>
+      {isMenuOpen && <WarpPortal/>}
     </div>
   </>)
 }
