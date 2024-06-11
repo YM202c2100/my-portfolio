@@ -18,18 +18,22 @@ const ContentWrapper:React.FC<ContentWrapperProps> = ({children})=>{
 
   useEffect(()=>{
     if(wrapperRef.current){
-      const elemHeightCenter = wrapperRef.current.offsetHeight/2
       const boundingClientRect = wrapperRef.current.getBoundingClientRect()
       const relativeYtoViewport = boundingClientRect.y
 
-      const newScaleOrigin:ScaleOrigin = {x:boundingClientRect.x/2,y:elemHeightCenter-relativeYtoViewport}
+      const newScaleOrigin:ScaleOrigin = {x:boundingClientRect.width/2,y:boundingClientRect.height/2-relativeYtoViewport}
       setOrigin(newScaleOrigin)
     }
   },[menuOpen])
 
   return(<>
     <div 
-      className={`bg-green-300 transition-[transform] duration-500 ease-in-out ${menuOpen ? "scale-75":"scale-100"}`}
+      className={`
+        bg-green-300 
+        transition-[transform] duration-500 ease-in-out
+        origin-center 
+        ${`origin-[${scaleOrigin.x}px_${scaleOrigin.y}px]`} 
+        ${menuOpen ? "scale-75":"scale-100"}`}
       ref={wrapperRef}
     >
       {children}
