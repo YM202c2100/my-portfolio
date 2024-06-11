@@ -2,6 +2,10 @@
 
 import { motion } from "framer-motion"
 
+interface LayoutProps{
+  className?:string
+}
+
 const WarpPortal = ()=>{
   return(
     <div className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center r'>
@@ -17,9 +21,19 @@ const WarpPortal = ()=>{
 }
 
 const Menu:React.FC = ()=>{
-  return(
+  const MenuButton:React.FC<LayoutProps> = ({className})=>{
+    return(
+      <button className={`fixed top-10 right-10 w-14 h-14 rounded-full bg-white z-50 ${className}`}>
+
+      </button>
+    )
+  }
+
+
+  return(<>
+    <MenuButton/>  
     <WarpPortal/>
-  )
+  </>)
 }
 
 export default Menu
