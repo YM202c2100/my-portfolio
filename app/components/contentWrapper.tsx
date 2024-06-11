@@ -6,16 +6,24 @@ interface ContentWrapperProps{
   children:ReactNode
 }
 
+interface ScaleOrigin{
+  x:number
+  y:number
+}
+
 const ContentWrapper:React.FC<ContentWrapperProps> = ({children})=>{
   const wrapperRef = useRef<HTMLDivElement>(null)
   const [menuOpen, setMenuOpen] = useState<boolean>()
-  const [originHeight, setOrigin] = useState<string>("0px")
+  const [scaleOrigin, setOrigin] = useState<ScaleOrigin>({x:0, y:0})
 
   useEffect(()=>{
     if(wrapperRef.current){
       const elemHeightCenter = wrapperRef.current.offsetHeight/2
-      const relativeYtoViewport = wrapperRef.current.getBoundingClientRect().y
-      setOrigin(`${elemHeightCenter-relativeYtoViewport}px`)
+      const boundingClientRect = wrapperRef.current.getBoundingClientRect()
+      const relativeYtoViewport = boundingClientRect.y
+
+      const newScaleOrigin:ScaleOrigin = {x:boundingClientRect.x/2,y:elemHeightCenter-relativeYtoViewport}
+      setOrigin(newScaleOrigin)
     }
   },[menuOpen])
 
