@@ -16,4 +16,10 @@ const WarpPortal = ()=>{
   )
 }
 
-export default WarpPortal
+const Menu:React.FC = ()=>{
+  return(
+    <WarpPortal/>
+  )
+}
+
+export default Menu
