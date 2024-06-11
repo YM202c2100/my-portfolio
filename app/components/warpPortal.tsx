@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 const WarpPortal = ()=>{
   return(
-    <div className='flex justify-center my-[40px]'>
+    <div className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center r'>
       <motion.div
         className='w-96 h-96 bg-[#1c1a34] rounded-full blur-sm'
         style={{boxShadow:
