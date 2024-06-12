@@ -27,7 +27,7 @@ const Menu:React.FC = ()=>{
   const MenuButton:React.FC<LayoutProps> = ({className})=>{
     return(
       <button 
-        className={`fixed top-10 right-10 w-14 h-14 rounded-full bg-white ${className}`}
+        className={`fixed top-10 right-10 w-14 h-14 rounded-full bg-gray-100 border-2 border-sky-300 ${className}`}
         onClick={()=>{setMenuOpen(!isMenuOpen)}}>
       </button>
     )
