@@ -18,7 +18,7 @@ const Menu:React.FC = ()=>{
 
   const WarpPortal = ()=>{
     return(
-      <div className='fixed w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center'>
+      <div className='fixed w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center'>
 
         <motion.div
           className={`${isHeightShorterThanWidth ? "h-5/6":"w-5/6"} aspect-square bg-[#1c1a34] rounded-full blur-sm`}
