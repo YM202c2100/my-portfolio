@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { exit } from "process"
 import { useState } from "react"
 
@@ -15,6 +15,10 @@ const Menu:React.FC = ()=>{
     const portalAppearanceAnimation ={
       initial:{scale:0},
       animate:{scale:1},
+      exit:{
+        scale:0,
+        transition:{duration:0.1}
+      }
     }
     return(
       <motion.div 
@@ -22,6 +26,7 @@ const Menu:React.FC = ()=>{
         variants={portalAppearanceAnimation}
         initial="initial"
         animate="animate"
+        exit="exit"
       >
 
         <motion.div
@@ -47,8 +52,10 @@ const Menu:React.FC = ()=>{
 
   return(<>
     <div className="fixed z-50">
-      <MenuButton/>  
-      {isMenuOpen && <WarpPortal/>}
+      <MenuButton/> 
+      <AnimatePresence>
+        {isMenuOpen && <WarpPortal/>}
+      </AnimatePresence> 
     </div>
   </>)
 }
