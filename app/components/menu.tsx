@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { exit } from "process"
 import { useState } from "react"
 
 interface LayoutProps{
@@ -11,8 +12,17 @@ const Menu:React.FC = ()=>{
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false)
 
   const WarpPortal = ()=>{
+    const portalAppearanceAnimation ={
+      initial:{scale:0},
+      animate:{scale:1},
+    }
     return(
-      <div className='fixed z-10 w-full h-full flex justify-center items-center'>
+      <motion.div 
+        className='fixed z-10 w-full h-full flex justify-center items-center'
+        variants={portalAppearanceAnimation}
+        initial="initial"
+        animate="animate"
+      >
 
         <motion.div
           className="landscape:h-[90%] portrait:w-[90%] aspect-square bg-[#1c1a34] rounded-full blur-sm"
@@ -21,7 +31,7 @@ const Menu:React.FC = ()=>{
           animate={{rotate:360}}
           transition={{repeat:Infinity, ease:"linear", duration:1.5}}
         />
-      </div>
+      </motion.div>
     )
   }
 
