@@ -29,12 +29,10 @@ const Menu:React.FC = ()=>{
         exit="exit"
       >
 
-        <motion.div
-          className="landscape:h-[90%] portrait:w-[90%] aspect-square bg-[#1c1a34] rounded-full blur-sm"
+        <div
+          className="landscape:h-[90%] portrait:w-[90%] aspect-square bg-[#1c1a34] rounded-full blur-sm animate-[spin_1.5s_linear_infinite]"
           style={{boxShadow:
             "-10px -10px 15px #db2a45, 0px -15px 20px #1e569b, 10px -10px 10px #1c1a34, 15px 0 20px #47ddf4, 10px 10px 20px #1c1a34, 0px 10px 10px #451e72, -11px 10px 20px #1c1a34"}}
-          animate={{rotate:360}}
-          transition={{repeat:Infinity, ease:"linear", duration:1.5}}
         />
       </motion.div>
     )
