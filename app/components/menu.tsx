@@ -12,7 +12,7 @@ const Menu:React.FC = ()=>{
 
   const WarpPortal = ()=>{
     return(
-      <div className='fixed z-10 w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center'>
+      <div className='fixed z-10 w-full h-full flex justify-center items-center'>
 
         <motion.div
           className="landscape:h-[90%] portrait:w-[90%] aspect-square bg-[#1c1a34] rounded-full blur-sm"
