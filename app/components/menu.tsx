@@ -1,6 +1,7 @@
 "use client"
 
 import { AnimatePresence, motion } from "framer-motion"
+import Link from "next/link"
 import { exit } from "process"
 import { useState } from "react"
 
@@ -34,6 +35,14 @@ const Menu:React.FC = ()=>{
           style={{boxShadow:
             "-10px -10px 15px #db2a45, 0px -15px 20px #1e569b, 10px -10px 10px #1c1a34, 15px 0 20px #47ddf4, 10px 10px 20px #1c1a34, 0px 10px 10px #451e72, -11px 10px 20px #1c1a34"}}
         />
+
+        <div className="absolute text-white animate-appear flex flex-col">
+            <Link href="/" className="animate-shift">リンク1</Link>
+            <Link href="/">リンク2</Link>
+        </div>
+        <div className="absolute text-white top-52 animate-unstableAppearance">
+            リンク1
+        </div>
       </motion.div>
     )
   }
