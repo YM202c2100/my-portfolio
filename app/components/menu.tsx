@@ -3,16 +3,21 @@
 import { AnimatePresence, motion } from "framer-motion"
 import Link from "next/link"
 import { exit } from "process"
-import { useState } from "react"
+import { ReactNode, useState } from "react"
 
 interface LayoutProps{
   className?:string
 }
 
+interface WarpPortalProps{
+  children:ReactNode,
+  textStyle:string
+}
+
 const Menu:React.FC = ()=>{
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false)
 
-  const WarpPortal = ()=>{
+  const WarpPortal:React.FC<WarpPortalProps> = ({children, textStyle})=>{
     const portalAppearanceAnimation ={
       initial:{scale:0, opacity:0},
       animate:{scale:1, opacity:1},
@@ -32,34 +37,13 @@ const Menu:React.FC = ()=>{
         animate="animate"
         exit="exit"
       >
-
         <div
           className="landscape:h-[90%] portrait:w-[90%] aspect-square bg-[#1c1a34] rounded-full blur-sm animate-[spin_1.5s_linear_infinite]"
           style={{boxShadow:
             "-10px -10px 15px #db2a45, 0px -15px 20px #1e569b, 10px -10px 10px #1c1a34, 15px 0 20px #47ddf4, 10px 10px 20px #1c1a34, 0px 10px 10px #451e72, -11px 10px 20px #1c1a34"}}
         />
-
-        <div className="absolute text-white animate-appear flex flex-col">
-            <Link href="/" className="animate-shift">リンク1</Link>
-            <Link href="/">リンク2</Link>
-        </div>
-        <div className="absolute text-white top-52">
-            <div className="animate-unstableAppearance">リンク1</div>
-            <motion.div
-              animate={{
-                opacity:[0, 0.5, 1], 
-            }}
-              transition={{duration:2}}
-            >リンク1</motion.div>
-            <motion.div
-              animate={{
-                opacity:[0, 0.3, 1], 
-              }}
-              transition={{
-                times:[0, 0.8, 1],
-                duration:2
-              }}
-            >リンク1</motion.div>
+        <div className={`absolute flex flex-col ${textStyle}`}>
+          {children}
         </div>
       </motion.div>
     )
@@ -79,7 +63,11 @@ const Menu:React.FC = ()=>{
     <div className="fixed z-50">
       <MenuButton/> 
       <AnimatePresence>
-        {isMenuOpen && <WarpPortal/>}
+        {isMenuOpen && 
+        <WarpPortal textStyle="text-white">
+          <Link href="/">リンク1</Link>
+          <Link href="/">リンク2</Link>
+        </WarpPortal>}
       </AnimatePresence> 
     </div>
   </>)
