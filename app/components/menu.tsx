@@ -40,8 +40,23 @@ const Menu:React.FC = ()=>{
             <Link href="/" className="animate-shift">リンク1</Link>
             <Link href="/">リンク2</Link>
         </div>
-        <div className="absolute text-white top-52 animate-unstableAppearance">
-            リンク1
+        <div className="absolute text-white top-52">
+            <div className="animate-unstableAppearance">リンク1</div>
+            <motion.div
+              animate={{
+                opacity:[0, 0.5, 1], 
+            }}
+              transition={{duration:2}}
+            >リンク1</motion.div>
+            <motion.div
+              animate={{
+                opacity:[0, 0.3, 1], 
+              }}
+              transition={{
+                times:[0, 0.8, 1],
+                duration:2
+              }}
+            >リンク1</motion.div>
         </div>
       </motion.div>
     )
