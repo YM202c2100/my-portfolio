@@ -64,9 +64,9 @@ const Menu:React.FC = ()=>{
       <MenuButton/> 
       <AnimatePresence>
         {isMenuOpen && 
-        <WarpPortal textStyle="text-white">
-          <Link href="/">リンク1</Link>
-          <Link href="/">リンク2</Link>
+        <WarpPortal textStyle="text-white animate-glitchChildren">
+            <Link href="/" className="animate-shift">リンク1</Link>
+            <Link href="/" className="animate-glitch2">リンク2</Link>
         </WarpPortal>}
       </AnimatePresence> 
     </div>

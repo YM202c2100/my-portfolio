@@ -16,9 +16,13 @@ const config: Config = {
       },
 
       animation: {
-        unstableAppearance: 'unstableAppearance 1s ease-in-out  alternate',
-        appear: 'appear 1s ease-in-out  alternate',
-        shift: 'shift 1s ease-in-out',
+        unstableAppearance: 'unstableAppearance 1s ease-in-out',
+        appear: 'appear 1s ease-in alternate',
+        shift: 'shift 1s linear 2 alternate',
+        glitch1: "glitch1 1s 2 alternate",
+        glitch2: "glitch2 1s 2",
+        glitch3: "glitch3 1s 2",
+        glitchChildren: "glitch1 1s 2 alternate, appear 1s ease-in"
       },
       keyframes: {
         unstableAppearance: {
@@ -30,8 +34,8 @@ const config: Config = {
           '62%': { transform: 'skewX(40deg) skewY(10deg)' },
           '63%': { transform: 'skewX(-20deg) skewY(-10deg)' },
           '70%': { transform: 'skewX(-20deg) skewY(-20deg)' },
-          '71%': { transform: 'skewX(10deg) skewY(-10deg)' },
-          '100%': {transform: 'skewX(0deg) skewY(0deg)', filter:'blur(0)',opacity:'1'}
+          '71%': { transform: 'skewX(10deg) skewY(-10deg) ',opacity:'1' },
+          '100%': {transform: 'skewX(0deg) skewY(0deg)', filter:'blur(0)'}
         },
         appear:{
           "0%":{filter: "blur(4px)", opacity:"0.3"},
@@ -39,7 +43,7 @@ const config: Config = {
         },
 
         shift: {
-          '0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100%': { transform: 'skewX(0deg)' },
+          '0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100%': { transform: 'skewX(0deg) skewY(0deg)' },
           '41%': { transform: 'skewX(10deg)' },
           '42%': { transform: 'skewX(-10deg)' },
           '59%': { transform: 'skewX(40deg) skewY(10deg)' },
@@ -49,6 +53,38 @@ const config: Config = {
           '71%': { transform: 'skewX(10deg) skewY(-10deg)' },
         },
 
+        glitch1: {
+          '0%, 20%, 33%, 100%': { transform: 'skewX(0deg) skewY(0deg)' },
+          '21%, 23%': { transform: 'skewX(20deg)' },
+          '24%, 26%': { transform: 'skewX(-20deg)' },
+          '27%, 29%': { transform: 'skewX(10deg) skewY(3deg)' },
+          '30%, 32%': { transform: 'skewX(-10deg) skewY(-5deg)' },
+        },
+        
+        glitch2: {
+          '0%, 60%, 64%, 78%, 81%, 86%, 89%, 93%, 100%': { transform: 'skewX(0deg) skewY(0deg)' },
+          '61%': { transform: 'skewY(-15deg)' },
+          '62%': { transform: 'skewY(15deg)' },
+          '79%': { transform: 'skewX(-30deg) skewY(-20deg)' },
+          '80%': { transform: 'skewY(20deg) skewX(20deg)' },
+          '85%': { transform: 'skewY(20deg) skewX(20deg)' },
+          '90%': { transform: 'skewX(40deg) skewY(30deg)' },
+          '91%': { transform: 'skewY(-20deg) skewX(20deg)' },
+        },
+        
+        glitch3: {
+          '0%, 60%, 64%, 78%, 81%, 86%, 89%, 93%, 100%': { transform: 'skewX(0deg) skewY(0deg)' },
+          '61%': { transform: 'skewX(-15deg)' },
+          '62%': { transform: 'skewX(15deg)' },
+          '79%': { transform: 'skewX(-30deg) skewY(-20deg)' },
+          '80%': { transform: 'skewX(50deg) skewY(20deg)' },
+          '85%': { transform: 'skewX(50deg) skewY(20deg)' },
+          '90%': { transform: 'skewX(40deg) skewY(30deg)' },
+          '91%': { transform: 'skewX(-20deg) skewY(20deg)' },
+        }
+        
+        
+        
       },
     },
   },
