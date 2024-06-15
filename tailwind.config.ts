@@ -21,7 +21,7 @@ const config: Config = {
         glitch3: "glitch3 1s 2",
         glitch4: "glitch4 1s 2",
         glitch4r: "glitch4 1s 2 reverse",
-        glitchChildren: "glitch1 1s 2 alternate, appear 1s ease-in"
+        appearPortalText: "glitch1 1s 2 alternate, appear 1s ease-in"
       },
       keyframes: {
         appear:{
