@@ -65,8 +65,8 @@ const Menu:React.FC = ()=>{
           <div className="absolute flex flex-col text-white animate-glitchChildren">
             <Link href="/" className="animate-shift">リンク1</Link>
             <Link href="/" className="animate-glitch2">リンク2</Link>
-            <Link href="/" className="animate-glitch3">リンク3</Link>
-            <Link href="/" className="animate-glitch4">リンク4</Link>
+            <Link href="/" className="animate-glitch4">リンク3</Link>
+            <Link href="/" className="animate-glitch3">リンク4</Link>
           </div>
         </WarpPortal>}
       </AnimatePresence> 
