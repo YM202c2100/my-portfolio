@@ -66,10 +66,10 @@ const config: Config = {
           '61%': { transform: 'skewY(-15deg)' },
           '62%': { transform: 'skewY(15deg)' },
           '79%': { transform: 'skewX(-30deg) skewY(-20deg)' },
-          '80%': { transform: 'skewY(20deg) skewX(20deg)' },
-          '85%': { transform: 'skewY(20deg) skewX(20deg)' },
+          '80%': { transform: 'skewX(20deg) skewY(20deg)' },
+          '85%': { transform: 'skewX(20deg) skewY(20deg)' },
           '90%': { transform: 'skewX(40deg) skewY(30deg)' },
-          '91%': { transform: 'skewY(-20deg) skewX(20deg)' },
+          '91%': { transform: 'skewX(20deg) skewY(-20deg)' },
         },
         
         glitch3: {
