@@ -22,6 +22,8 @@ const config: Config = {
         glitch1: "glitch1 1s 2 alternate",
         glitch2: "glitch2 1s 2",
         glitch3: "glitch3 1s 2",
+        glitch4: "glitch4 1s 2",
+        glitch4r: "glitch4 1s 2 reverse",
         glitchChildren: "glitch1 1s 2 alternate, appear 1s ease-in"
       },
       keyframes: {
@@ -73,14 +75,25 @@ const config: Config = {
         },
         
         glitch3: {
-          '0%, 60%, 64%, 78%, 81%, 86%, 89%, 93%, 100%': { transform: 'skewX(0deg) skewY(0deg)' },
-          '61%': { transform: 'skewX(-15deg)' },
-          '62%': { transform: 'skewX(15deg)' },
-          '79%': { transform: 'skewX(-30deg) skewY(-20deg)' },
-          '80%': { transform: 'skewX(50deg) skewY(20deg)' },
-          '85%': { transform: 'skewX(50deg) skewY(20deg)' },
-          '90%': { transform: 'skewX(40deg) skewY(30deg)' },
-          '91%': { transform: 'skewX(-20deg) skewY(20deg)' },
+          '0%, 60%, 64%, 78%, 81%, 86%, 89%, 93%, 100%': { transform: 'skewX(0deg) skewY(0deg) translate(0px, 0px)' },
+          '61%': { transform: 'skewX(5deg) translate(-10px, -10px)' },
+          '62%': { transform: 'skewX(-5deg) translate(-10px, -10px)' },
+          '79%': { transform: 'skewX(30deg) skewY(20deg)' },
+          '80%': { transform: 'skewX(-10deg) skewY(-10deg)  translate(20px, 20px)' },
+          '85%': { transform: 'skewX(-10deg) skewY(-10deg)  translate(20px, 20px)' },
+          '90%': { transform: 'skewX(-10deg) skewY(-20deg)' },
+          '91%': { transform: 'skewX(-40deg) skewY(10deg)' },
+        },
+
+        glitch4: {
+          '0%, 20%, 24%, 38%, 41%, 46%, 49%, 53%, 100%': { transform: 'skewX(0deg) skewY(0deg)' },
+          '21%': { transform: 'skewX(-15deg)' },
+          '22%': { transform: 'skewX(15deg)' },
+          '39%': { transform: 'skewX(-30deg) skewY(-20deg)' },
+          '40%': { transform: 'skewX(50deg) skewY(20deg)' },
+          '45%': { transform: 'skewX(50deg) skewY(20deg)' },
+          '50%': { transform: 'skewX(40deg) skewY(30deg)' },
+          '51%': { transform: 'skewX(-20deg) skewY(20deg)' },
         }
         
         
