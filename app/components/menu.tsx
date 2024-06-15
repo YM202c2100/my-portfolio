@@ -11,13 +11,12 @@ interface LayoutProps{
 
 interface WarpPortalProps{
   children:ReactNode,
-  textStyle:string
 }
 
 const Menu:React.FC = ()=>{
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false)
 
-  const WarpPortal:React.FC<WarpPortalProps> = ({children, textStyle})=>{
+  const WarpPortal:React.FC<WarpPortalProps> = ({children})=>{
     const portalAppearanceAnimation ={
       initial:{scale:0, opacity:0},
       animate:{scale:1, opacity:1},
@@ -42,9 +41,7 @@ const Menu:React.FC = ()=>{
           style={{boxShadow:
             "-10px -10px 15px #db2a45, 0px -15px 20px #1e569b, 10px -10px 10px #1c1a34, 15px 0 20px #47ddf4, 10px 10px 20px #1c1a34, 0px 10px 10px #451e72, -11px 10px 20px #1c1a34"}}
         />
-        <div className={`absolute flex flex-col ${textStyle}`}>
-          {children}
-        </div>
+        {children}
       </motion.div>
     )
   }
@@ -64,11 +61,13 @@ const Menu:React.FC = ()=>{
       <MenuButton/> 
       <AnimatePresence>
         {isMenuOpen && 
-        <WarpPortal textStyle="text-white animate-glitchChildren">
+        <WarpPortal>
+          <div className="absolute flex flex-col text-white animate-glitchChildren">
             <Link href="/" className="animate-shift">リンク1</Link>
             <Link href="/" className="animate-glitch2">リンク2</Link>
             <Link href="/" className="animate-glitch3">リンク3</Link>
             <Link href="/" className="animate-glitch4">リンク4</Link>
+          </div>
         </WarpPortal>}
       </AnimatePresence> 
     </div>
