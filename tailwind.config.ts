@@ -15,12 +15,12 @@ const config: Config = {
       },
 
       animation: {
-        shift: 'shift 1s linear 2 alternate',
         glitch1: "glitch1 1s 2 alternate",
         glitch2: "glitch2 1s 2",
         glitch3: "glitch3 1s 2",
         glitch4: "glitch4 1s 2",
         glitch4r: "glitch4 1s 2 reverse",
+        glitch5: 'glitch5 1s linear 2 alternate',
         appearPortalText: "glitch1 1s 2 alternate, appear 1s ease-in"
       },
       keyframes: {
@@ -29,7 +29,7 @@ const config: Config = {
           "100%":{filter:"blur(0)", opacity:"1"}
         },
 
-        shift: {
+        glitch5: {
           '0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100%': { transform: 'skewX(0deg) skewY(0deg)' },
           '41%': { transform: 'skewX(10deg)' },
           '42%': { transform: 'skewX(-10deg)' },

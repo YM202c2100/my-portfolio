@@ -63,7 +63,7 @@ const Menu:React.FC = ()=>{
         {isMenuOpen && 
         <WarpPortal>
           <div className="absolute flex flex-col text-white animate-appearPortalText">
-            <Link href="/" className="animate-shift">リンク1</Link>
+            <Link href="/" className="animate-glitch5">リンク1</Link>
             <Link href="/" className="animate-glitch2">リンク2</Link>
             <Link href="/" className="animate-glitch4">リンク3</Link>
             <Link href="/" className="animate-glitch3">リンク4</Link>
