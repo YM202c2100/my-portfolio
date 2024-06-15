@@ -29,17 +29,6 @@ const config: Config = {
           "100%":{filter:"blur(0)", opacity:"1"}
         },
 
-        glitch5: {
-          '0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100%': { transform: 'skewX(0deg) skewY(0deg)' },
-          '41%': { transform: 'skewX(10deg)' },
-          '42%': { transform: 'skewX(-10deg)' },
-          '59%': { transform: 'skewX(40deg) skewY(10deg)' },
-          '60%': { transform: 'skewX(-40deg) skewY(-10deg)' },
-          '63%': { transform: 'skewX(10deg) skewY(-5deg)' },
-          '70%': { transform: 'skewX(-50deg) skewY(-20deg)' },
-          '71%': { transform: 'skewX(10deg) skewY(-10deg)' },
-        },
-
         glitch1: {
           '0%, 20%, 33%, 100%': { transform: 'skewX(0deg) skewY(0deg)' },
           '21%, 23%': { transform: 'skewX(20deg)' },
@@ -79,7 +68,18 @@ const config: Config = {
           '45%': { transform: 'skewX(50deg) skewY(20deg)' },
           '50%': { transform: 'skewX(40deg) skewY(30deg)' },
           '51%': { transform: 'skewX(-20deg) skewY(20deg)' },
-        }
+        },
+        
+        glitch5: {
+          '0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100%': { transform: 'skewX(0deg) skewY(0deg)' },
+          '41%': { transform: 'skewX(10deg)' },
+          '42%': { transform: 'skewX(-10deg)' },
+          '59%': { transform: 'skewX(40deg) skewY(10deg)' },
+          '60%': { transform: 'skewX(-40deg) skewY(-10deg)' },
+          '63%': { transform: 'skewX(10deg) skewY(-5deg)' },
+          '70%': { transform: 'skewX(-50deg) skewY(-20deg)' },
+          '71%': { transform: 'skewX(10deg) skewY(-10deg)' },
+        },
       },
     },
   },
