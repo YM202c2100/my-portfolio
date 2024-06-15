@@ -1,4 +1,3 @@
-import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -16,7 +15,6 @@ const config: Config = {
       },
 
       animation: {
-        appear: 'appear 1s ease-in alternate',
         shift: 'shift 1s linear 2 alternate',
         glitch1: "glitch1 1s 2 alternate",
         glitch2: "glitch2 1s 2",
@@ -82,9 +80,6 @@ const config: Config = {
           '50%': { transform: 'skewX(40deg) skewY(30deg)' },
           '51%': { transform: 'skewX(-20deg) skewY(20deg)' },
         }
-        
-        
-        
       },
     },
   },
